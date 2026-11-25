@@ -8,11 +8,11 @@
    "low": 2406.0,
    "close": 2414.1,
    "volume": 1240672,
-   "daily_return_pct": NaN,
-   "sma_20": NaN,
-   "sma_50": NaN,
+   "daily_return_pct": null,
+   "sma_20": null,
+   "sma_50": null,
    "ema_20": 2414.1,
-   "rsi_14": NaN,
+   "rsi_14": null,
    "cumulative_return_pct": 0.0
   },
   {
@@ -23,10 +23,10 @@
    "close": 2425.2,
    "volume": 1242683,
    "daily_return_pct": 0.46,
-   "sma_20": NaN,
-   "sma_50": NaN,
+   "sma_20": null,
+   "sma_50": null,
    "ema_20": 2415.16,
-   "rsi_14": NaN,
+   "rsi_14": null,
    "cumulative_return_pct": 0.46
   },
   {
@@ -37,10 +37,10 @@
    "close": 2451.7,
    "volume": 1872248,
    "daily_return_pct": 1.093,
-   "sma_20": NaN,
-   "sma_50": NaN,
+   "sma_20": null,
+   "sma_50": null,
    "ema_20": 2418.64,
-   "rsi_14": NaN,
+   "rsi_14": null,
    "cumulative_return_pct": 1.558
   },
   {
@@ -51,10 +51,10 @@
    "close": 2466.6,
    "volume": 973225,
    "daily_return_pct": 0.608,
-   "sma_20": NaN,
-   "sma_50": NaN,
+   "sma_20": null,
+   "sma_50": null,
    "ema_20": 2423.21,
-   "rsi_14": NaN,
+   "rsi_14": null,
    "cumulative_return_pct": 2.175
   },
   {
@@ -65,10 +65,10 @@
    "close": 2464.5,
    "volume": 1924828,
    "daily_return_pct": -0.085,
-   "sma_20": NaN,
-   "sma_50": NaN,
+   "sma_20": null,
+   "sma_50": null,
    "ema_20": 2427.14,
-   "rsi_14": NaN,
+   "rsi_14": null,
    "cumulative_return_pct": 2.088
   },
   {
@@ -79,10 +79,10 @@
    "close": 2477.8,
    "volume": 2179406,
    "daily_return_pct": 0.54,
-   "sma_20": NaN,
-   "sma_50": NaN,
+   "sma_20": null,
+   "sma_50": null,
    "ema_20": 2431.96,
-   "rsi_14": NaN,
+   "rsi_14": null,
    "cumulative_return_pct": 2.639
   },
   {
@@ -93,10 +93,10 @@
    "close": 2448.0,
    "volume": 3535932,
    "daily_return_pct": -1.203,
-   "sma_20": NaN,
-   "sma_50": NaN,
+   "sma_20": null,
+   "sma_50": null,
    "ema_20": 2433.49,
-   "rsi_14": NaN,
+   "rsi_14": null,
    "cumulative_return_pct": 1.404
   },
   {
@@ -107,10 +107,10 @@
    "close": 2462.2,
    "volume": 2587753,
    "daily_return_pct": 0.58,
-   "sma_20": NaN,
-   "sma_50": NaN,
+   "sma_20": null,
+   "sma_50": null,
    "ema_20": 2436.22,
-   "rsi_14": NaN,
+   "rsi_14": null,
    "cumulative_return_pct": 1.992
   },
   {
@@ -121,10 +121,10 @@
    "close": 2338.6,
    "volume": 4008271,
    "daily_return_pct": -5.02,
-   "sma_20": NaN,
-   "sma_50": NaN,
+   "sma_20": null,
+   "sma_50": null,
    "ema_20": 2426.93,
-   "rsi_14": NaN,
+   "rsi_14": null,
    "cumulative_return_pct": -3.127
   },
   {
@@ -135,10 +135,10 @@
    "close": 2314.0,
    "volume": 1898154,
    "daily_return_pct": -1.052,
-   "sma_20": NaN,
-   "sma_50": NaN,
+   "sma_20": null,
+   "sma_50": null,
    "ema_20": 2416.17,
-   "rsi_14": NaN,
+   "rsi_14": null,
    "cumulative_return_pct": -4.146
   },
   {
@@ -149,10 +149,10 @@
    "close": 2306.5,
    "volume": 1471488,
    "daily_return_pct": -0.324,
-   "sma_20": NaN,
-   "sma_50": NaN,
+   "sma_20": null,
+   "sma_50": null,
    "ema_20": 2405.73,
-   "rsi_14": NaN,
+   "rsi_14": null,
    "cumulative_return_pct": -4.457
   },
   {
@@ -163,10 +163,10 @@
    "close": 2301.7,
    "volume": 2857290,
    "daily_return_pct": -0.208,
-   "sma_20": NaN,
-   "sma_50": NaN,
+   "sma_20": null,
+   "sma_50": null,
    "ema_20": 2395.82,
-   "rsi_14": NaN,
+   "rsi_14": null,
    "cumulative_return_pct": -4.656
   },
   {
@@ -177,10 +177,10 @@
    "close": 2305.6,
    "volume": 1108032,
    "daily_return_pct": 0.169,
-   "sma_20": NaN,
-   "sma_50": NaN,
+   "sma_20": null,
+   "sma_50": null,
    "ema_20": 2387.23,
-   "rsi_14": NaN,
+   "rsi_14": null,
    "cumulative_return_pct": -4.494
   },
   {
@@ -191,10 +191,10 @@
    "close": 2260.6,
    "volume": 3203114,
    "daily_return_pct": -1.952,
-   "sma_20": NaN,
-   "sma_50": NaN,
+   "sma_20": null,
+   "sma_50": null,
    "ema_20": 2375.17,
-   "rsi_14": NaN,
+   "rsi_14": null,
    "cumulative_return_pct": -6.358
   },
   {
@@ -205,8 +205,8 @@
    "close": 2293.5,
    "volume": 1274115,
    "daily_return_pct": 1.455,
-   "sma_20": NaN,
-   "sma_50": NaN,
+   "sma_20": null,
+   "sma_50": null,
    "ema_20": 2367.39,
    "rsi_14": 32.98,
    "cumulative_return_pct": -4.996
@@ -219,8 +219,8 @@
    "close": 2281.1,
    "volume": 1256042,
    "daily_return_pct": -0.541,
-   "sma_20": NaN,
-   "sma_50": NaN,
+   "sma_20": null,
+   "sma_50": null,
    "ema_20": 2359.17,
    "rsi_14": 29.73,
    "cumulative_return_pct": -5.509
@@ -233,8 +233,8 @@
    "close": 2275.6,
    "volume": 808100,
    "daily_return_pct": -0.241,
-   "sma_20": NaN,
-   "sma_50": NaN,
+   "sma_20": null,
+   "sma_50": null,
    "ema_20": 2351.21,
    "rsi_14": 23.68,
    "cumulative_return_pct": -5.737
@@ -247,8 +247,8 @@
    "close": 2265.5,
    "volume": 1057295,
    "daily_return_pct": -0.444,
-   "sma_20": NaN,
-   "sma_50": NaN,
+   "sma_20": null,
+   "sma_50": null,
    "ema_20": 2343.05,
    "rsi_14": 19.5,
    "cumulative_return_pct": -6.156
@@ -261,8 +261,8 @@
    "close": 2280.0,
    "volume": 1237214,
    "daily_return_pct": 0.64,
-   "sma_20": NaN,
-   "sma_50": NaN,
+   "sma_20": null,
+   "sma_50": null,
    "ema_20": 2337.04,
    "rsi_14": 23.03,
    "cumulative_return_pct": -5.555
@@ -276,7 +276,7 @@
    "volume": 790773,
    "daily_return_pct": 0.417,
    "sma_20": 2356.11,
-   "sma_50": NaN,
+   "sma_50": null,
    "ema_20": 2332.52,
    "rsi_14": 22.17,
    "cumulative_return_pct": -5.161
@@ -290,7 +290,7 @@
    "volume": 1128801,
    "daily_return_pct": 0.572,
    "sma_20": 2350.54,
-   "sma_50": NaN,
+   "sma_50": null,
    "ema_20": 2329.67,
    "rsi_14": 27.39,
    "cumulative_return_pct": -4.619
@@ -304,7 +304,7 @@
    "volume": 519380,
    "daily_return_pct": -0.886,
    "sma_20": 2343.39,
-   "sma_50": NaN,
+   "sma_50": null,
    "ema_20": 2325.15,
    "rsi_14": 22.54,
    "cumulative_return_pct": -5.464
@@ -318,7 +318,7 @@
    "volume": 533626,
    "daily_return_pct": 0.14,
    "sma_20": 2335.07,
-   "sma_50": NaN,
+   "sma_50": null,
    "ema_20": 2321.36,
    "rsi_14": 37.17,
    "cumulative_return_pct": -5.331
@@ -332,7 +332,7 @@
    "volume": 1086695,
    "daily_return_pct": 0.346,
    "sma_20": 2326.41,
-   "sma_50": NaN,
+   "sma_50": null,
    "ema_20": 2318.69,
    "rsi_14": 44.57,
    "cumulative_return_pct": -5.004
@@ -346,7 +346,7 @@
    "volume": 1556717,
    "daily_return_pct": -0.135,
    "sma_20": 2317.7,
-   "sma_50": NaN,
+   "sma_50": null,
    "ema_20": 2315.98,
    "rsi_14": 45.63,
    "cumulative_return_pct": -5.132
@@ -360,7 +360,7 @@
    "volume": 1324220,
    "daily_return_pct": 1.122,
    "sma_20": 2309.6,
-   "sma_50": NaN,
+   "sma_50": null,
    "ema_20": 2315.97,
    "rsi_14": 53.43,
    "cumulative_return_pct": -4.068
@@ -374,7 +374,7 @@
    "volume": 758866,
    "daily_return_pct": 0.307,
    "sma_20": 2303.35,
-   "sma_50": NaN,
+   "sma_50": null,
    "ema_20": 2316.64,
    "rsi_14": 54.13,
    "cumulative_return_pct": -3.774
@@ -388,7 +388,7 @@
    "volume": 973413,
    "daily_return_pct": 1.076,
    "sma_20": 2297.64,
-   "sma_50": NaN,
+   "sma_50": null,
    "ema_20": 2319.62,
    "rsi_14": 72.95,
    "cumulative_return_pct": -2.738
@@ -402,7 +402,7 @@
    "volume": 1344113,
    "daily_return_pct": 1.537,
    "sma_20": 2299.92,
-   "sma_50": NaN,
+   "sma_50": null,
    "ema_20": 2325.77,
    "rsi_14": 73.4,
    "cumulative_return_pct": -1.243
@@ -416,7 +416,7 @@
    "volume": 1584720,
    "daily_return_pct": 1.703,
    "sma_20": 2305.45,
-   "sma_50": NaN,
+   "sma_50": null,
    "ema_20": 2335.19,
    "rsi_14": 82.37,
    "cumulative_return_pct": 0.439
@@ -430,7 +430,7 @@
    "volume": 892690,
    "daily_return_pct": -1.043,
    "sma_20": 2310.1,
-   "sma_50": NaN,
+   "sma_50": null,
    "ema_20": 2341.3,
    "rsi_14": 75.62,
    "cumulative_return_pct": -0.609
@@ -444,7 +444,7 @@
    "volume": 1163828,
    "daily_return_pct": -0.529,
    "sma_20": 2314.34,
-   "sma_50": NaN,
+   "sma_50": null,
    "ema_20": 2345.63,
    "rsi_14": 74.82,
    "cumulative_return_pct": -1.135
@@ -458,7 +458,7 @@
    "volume": 1189464,
    "daily_return_pct": -0.591,
    "sma_20": 2317.7,
-   "sma_50": NaN,
+   "sma_50": null,
    "ema_20": 2348.2,
    "rsi_14": 68.99,
    "cumulative_return_pct": -1.719
@@ -472,7 +472,7 @@
    "volume": 1057665,
    "daily_return_pct": 1.416,
    "sma_20": 2324.98,
-   "sma_50": NaN,
+   "sma_50": null,
    "ema_20": 2353.72,
    "rsi_14": 71.78,
    "cumulative_return_pct": -0.327
@@ -486,7 +486,7 @@
    "volume": 1519683,
    "daily_return_pct": -0.694,
    "sma_20": 2329.78,
-   "sma_50": NaN,
+   "sma_50": null,
    "ema_20": 2357.13,
    "rsi_14": 66.0,
    "cumulative_return_pct": -1.019
@@ -500,7 +500,7 @@
    "volume": 1027639,
    "daily_return_pct": -1.507,
    "sma_20": 2333.4,
-   "sma_50": NaN,
+   "sma_50": null,
    "ema_20": 2356.78,
    "rsi_14": 62.42,
    "cumulative_return_pct": -2.51
@@ -514,7 +514,7 @@
    "volume": 0,
    "daily_return_pct": 0.0,
    "sma_20": 2337.29,
-   "sma_50": NaN,
+   "sma_50": null,
    "ema_20": 2356.47,
    "rsi_14": 61.99,
    "cumulative_return_pct": -2.51
@@ -528,7 +528,7 @@
    "volume": 1367606,
    "daily_return_pct": 0.293,
    "sma_20": 2342.04,
-   "sma_50": NaN,
+   "sma_50": null,
    "ema_20": 2356.84,
    "rsi_14": 61.86,
    "cumulative_return_pct": -2.224
@@ -542,7 +542,7 @@
    "volume": 1505238,
    "daily_return_pct": 2.267,
    "sma_20": 2348.73,
-   "sma_50": NaN,
+   "sma_50": null,
    "ema_20": 2362.28,
    "rsi_14": 68.56,
    "cumulative_return_pct": -0.008
@@ -556,7 +556,7 @@
    "volume": 1460806,
    "daily_return_pct": -1.442,
    "sma_20": 2353.21,
-   "sma_50": NaN,
+   "sma_50": null,
    "ema_20": 2363.88,
    "rsi_14": 59.23,
    "cumulative_return_pct": -1.45
@@ -570,7 +570,7 @@
    "volume": 1020245,
    "daily_return_pct": -0.467,
    "sma_20": 2356.48,
-   "sma_50": NaN,
+   "sma_50": null,
    "ema_20": 2364.27,
    "rsi_14": 56.5,
    "cumulative_return_pct": -1.91
@@ -584,7 +584,7 @@
    "volume": 1745964,
    "daily_return_pct": 0.954,
    "sma_20": 2361.9,
-   "sma_50": NaN,
+   "sma_50": null,
    "ema_20": 2366.78,
    "rsi_14": 56.19,
    "cumulative_return_pct": -0.973
@@ -598,7 +598,7 @@
    "volume": 1378097,
    "daily_return_pct": 0.791,
    "sma_20": 2368.1,
-   "sma_50": NaN,
+   "sma_50": null,
    "ema_20": 2370.85,
    "rsi_14": 53.89,
    "cumulative_return_pct": -0.191
@@ -612,7 +612,7 @@
    "volume": 2060117,
    "daily_return_pct": -0.357,
    "sma_20": 2373.48,
-   "sma_50": NaN,
+   "sma_50": null,
    "ema_20": 2373.71,
    "rsi_14": 45.96,
    "cumulative_return_pct": -0.547
@@ -626,7 +626,7 @@
    "volume": 1797593,
    "daily_return_pct": -0.937,
    "sma_20": 2377.9,
-   "sma_50": NaN,
+   "sma_50": null,
    "ema_20": 2374.16,
    "rsi_14": 46.4,
    "cumulative_return_pct": -1.479
@@ -640,7 +640,7 @@
    "volume": 1478536,
    "daily_return_pct": -1.085,
    "sma_20": 2379.73,
-   "sma_50": NaN,
+   "sma_50": null,
    "ema_20": 2372.1,
    "rsi_14": 44.41,
    "cumulative_return_pct": -2.548
@@ -654,7 +654,7 @@
    "volume": 2090462,
    "daily_return_pct": 0.867,
    "sma_20": 2382.23,
-   "sma_50": NaN,
+   "sma_50": null,
    "ema_20": 2372.19,
    "rsi_14": 50.06,
    "cumulative_return_pct": -1.702
@@ -668,7 +668,7 @@
    "volume": 1375089,
    "daily_return_pct": -0.662,
    "sma_20": 2382.69,
-   "sma_50": NaN,
+   "sma_50": null,
    "ema_20": 2370.77,
    "rsi_14": 41.67,
    "cumulative_return_pct": -2.353
@@ -682,7 +682,7 @@
    "volume": 1553270,
    "daily_return_pct": 0.479,
    "sma_20": 2381.92,
-   "sma_50": NaN,
+   "sma_50": null,
    "ema_20": 2370.56,
    "rsi_14": 46.37,
    "cumulative_return_pct": -1.885
