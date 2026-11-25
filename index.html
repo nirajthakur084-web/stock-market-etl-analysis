@@ -1,136 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Stock Market Data ETL & Analysis — Niraj Thakur</title>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
-<style>
-  :root{--bg:#0b1220;--card:#131c30;--line:#24314f;--txt:#e8eef9;--mut:#93a4c3;--up:#22c55e;--down:#ef4444;--acc:#38bdf8}
-  *{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,Arial,sans-serif;background:var(--bg);color:var(--txt)}
-  header{padding:28px 20px 10px;max-width:1180px;margin:auto}
-  h1{margin:0 0 6px;font-size:28px} .sub{color:var(--mut);font-size:14px}
-  .badge{display:inline-block;background:#0e2a1f;color:var(--up);border:1px solid #14532d;padding:2px 10px;border-radius:999px;font-size:12px;margin-left:8px}
-  main{max-width:1180px;margin:auto;padding:16px 20px 40px}
-  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:14px 0}
-  .kpi,.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
-  .kpi b{font-size:24px;display:block}.kpi span{color:var(--mut);font-size:13px}
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:12px}
-  .stock{cursor:pointer;transition:.15s}.stock:hover{border-color:var(--acc)}
-  .stock h3{margin:0 0 2px;font-size:16px}.stock .nm{color:var(--mut);font-size:12px;margin-bottom:10px}
-  .price{font-size:22px;font-weight:700}.pos{color:var(--up)}.neg{color:var(--down)}
-  .meta{font-size:12px;color:var(--mut);margin-top:8px;line-height:1.6}
-  .sig{font-size:12px;margin-top:8px;background:#0f172a;border:1px solid var(--line);padding:6px 8px;border-radius:8px}
-  select{background:#0f172a;color:var(--txt);border:1px solid var(--line);border-radius:8px;padding:9px 12px;font-size:14px;margin:8px 0 14px}
-  canvas{max-height:380px}
-  table{width:100%;border-collapse:collapse;font-size:13px} th,td{padding:9px 8px;border-bottom:1px solid var(--line);text-align:right}
-  th:first-child,td:first-child{text-align:left} th{color:var(--mut);font-weight:600}
-  footer{max-width:1180px;margin:auto;padding:0 20px 30px;color:var(--mut);font-size:13px;line-height:1.7}
-  .err{background:#3f1d1d;border:1px solid #7f1d1d;color:#fecaca;padding:12px;border-radius:10px}
-</style>
-</head>
-<body>
-<header>
-  <h1>📈 Stock Market Data ETL &amp; Analysis <span class="badge">LIVE DATA</span></h1>
-  <div class="sub">Daily OHLCV pipeline for 8 NSE stocks + NIFTY 50 &amp; SENSEX · Yahoo Finance → pandas ETL → SQLite → this dashboard · By <b>Niraj Thakur</b></div>
-  <div class="sub" id="generated"></div>
-</header>
-<main>
-  <div class="kpis">
-    <div class="kpi"><b id="kTickers">–</b><span>Tickers tracked</span></div>
-    <div class="kpi"><b id="kRows">–</b><span>Clean rows in SQLite</span></div>
-    <div class="kpi"><b id="kRange">–</b><span>Data period (1 year daily)</span></div>
-    <div class="kpi"><b id="kBest">–</b><span>Best 1-year performer</span></div>
-  </div>
-
-  <h2>Stocks &amp; Indices</h2>
-  <div class="grid" id="cards"></div>
-
-  <h2 style="margin-top:28px">Price Chart — Close with SMA 20 / SMA 50</h2>
-  <select id="picker"></select>
-  <div class="card"><canvas id="priceChart"></canvas></div>
-
-  <h2 style="margin-top:28px">Cumulative Return % (rebased to day 1)</h2>
-  <div class="card"><canvas id="cumChart"></canvas></div>
-
-  <h2 style="margin-top:28px">Comparison Table</h2>
-  <div class="card" style="overflow-x:auto"><table id="tbl">
-    <thead><tr><th>Ticker</th><th>Latest Close</th><th>1Y Return %</th><th>RSI 14</th><th>Volatility 20d</th><th>Avg Volume</th><th>Best Day %</th><th>Worst Day %</th></tr></thead>
-    <tbody></tbody>
-  </table></div>
-
-  <h2 style="margin-top:28px">ETL Data Quality</h2>
-  <div class="card" id="quality">Loading…</div>
-</main>
-<footer>
-  <b>How the ETL works:</b> Extract — daily OHLCV from the Yahoo Finance chart API (no key). Transform — pandas cleaning (nulls, duplicate dates, OHLC-logic violations counted and dropped), then indicators: daily return, SMA 20/50, EMA 20, RSI 14, 20-day volatility, cumulative return. Load — SQLite <i>stocks.db</i> (daily_prices, ticker_summary, pipeline_runs) + JSON exports powering this page. Re-run anytime with <code>python3 etl/pipeline.py</code>.<br>
-  Educational project — not investment advice. Data: Yahoo Finance. Built by Niraj Thakur.
-</footer>
-<script>
-const fileFor = t => t.startsWith('^') ? 'IDX_' + t.slice(1) : t;
-let priceChart, cumChart, allSeries = {};
-async function getJSON(p){ const r = await fetch(p); if(!r.ok) throw new Error(p+' '+r.status); return r.json(); }
-(async () => {
-  try {
-    const summary = await getJSON('data/summary.json');
-    const quality = await getJSON('data/quality.json');
-    const T = summary.tickers;
-    document.getElementById('generated').textContent = 'Last pipeline run: ' + new Date(summary.generated_at_utc).toLocaleString('en-IN') + ' · Source: ' + summary.source;
-    document.getElementById('kTickers').textContent = T.length;
-    document.getElementById('kRows').textContent = T.reduce((a,t)=>a+t.rows,0).toLocaleString('en-IN');
-    document.getElementById('kRange').textContent = T[0].date_from + ' → ' + T[0].date_to;
-    const best = [...T].sort((a,b)=>b.period_return_pct-a.period_return_pct)[0];
-    document.getElementById('kBest').innerHTML = best.ticker.replace('.NS','') + ' <span class="'+(best.period_return_pct>=0?'pos':'neg')+'" style="font-size:16px">' + (best.period_return_pct>=0?'+':'') + best.period_return_pct.toFixed(2) + '%</span>';
-
-    const cards = document.getElementById('cards');
-    const picker = document.getElementById('picker');
-    T.forEach(t => {
-      const d = document.createElement('div'); d.className='card stock';
-      d.innerHTML = `<h3>${t.ticker}</h3><div class="nm">${t.name}</div>
-        <div class="price">₹${t.latest_close.toLocaleString('en-IN')}</div>
-        <div class="${t.period_return_pct>=0?'pos':'neg'}">${t.period_return_pct>=0?'▲':'▼'} ${Math.abs(t.period_return_pct).toFixed(2)}% in 1 year</div>
-        <div class="meta">RSI 14: ${t.rsi_14 ?? '–'} · Vol 20d: ${t.volatility_20d ?? '–'}<br>Avg volume: ${t.avg_daily_volume.toLocaleString('en-IN')}<br>Latest: ${t.latest_date}</div>
-        <div class="sig">${t.signal}</div>`;
-      d.onclick = () => { picker.value = t.ticker; drawPrice(t.ticker); picker.scrollIntoView({behavior:'smooth'}); };
-      cards.appendChild(d);
-      const o = document.createElement('option'); o.value=t.ticker; o.textContent=t.ticker+' — '+t.name; picker.appendChild(o);
-    });
-
-    const tb = document.querySelector('#tbl tbody');
-    [...T].sort((a,b)=>b.period_return_pct-a.period_return_pct).forEach(t => {
-      tb.innerHTML += `<tr><td><b>${t.ticker}</b></td><td>₹${t.latest_close.toLocaleString('en-IN')}</td>
-      <td class="${t.period_return_pct>=0?'pos':'neg'}">${t.period_return_pct.toFixed(2)}</td><td>${t.rsi_14 ?? '–'}</td>
-      <td>${t.volatility_20d ?? '–'}</td><td>${t.avg_daily_volume.toLocaleString('en-IN')}</td>
-      <td class="pos">${t.best_day.return_pct} (${t.best_day.date})</td><td class="neg">${t.worst_day.return_pct} (${t.worst_day.date})</td></tr>`;
-    });
-
-    document.getElementById('quality').innerHTML = '<table><thead><tr><th>Ticker</th><th>Raw</th><th>Clean</th><th>Dropped</th><th>Null Close</th><th>OHLC Violations</th><th>Extreme Days &gt;20%</th></tr></thead><tbody>' +
-      Object.entries(quality).map(([k,q])=>`<tr><td><b>${k}</b></td><td>${q.raw_rows}</td><td>${q.clean_rows}</td><td>${q.rows_dropped}</td><td>${q.null_close_rows}</td><td>${q.ohlc_violations}</td><td>${q.extreme_move_days_gt20pct}</td></tr>`).join('') + '</tbody></table>';
-
-    for (const t of T) allSeries[t.ticker] = (await getJSON('data/series/' + fileFor(t.ticker) + '.json')).points;
-    drawPrice(T[0].ticker);
-    drawCum(T);
-    picker.onchange = () => drawPrice(picker.value);
-  } catch(e) {
-    document.querySelector('main').insertAdjacentHTML('afterbegin','<div class="err">Could not load pipeline data ('+e.message+'). Run <b>python3 etl/pipeline.py</b> first, then serve this folder over HTTP.</div>');
-  }
-})();
-function drawPrice(ticker){
-  const pts = allSeries[ticker]; if(!pts) return;
-  const labels = pts.map(p=>p.date);
-  const mk = (key,color,dash=[]) => ({label:key.toUpperCase(), data:pts.map(p=>p[key]), borderColor:color, borderWidth:key==='close'?2:1.2, borderDash:dash, pointRadius:0, tension:.15});
-  if(priceChart) priceChart.destroy();
-  priceChart = new Chart(document.getElementById('priceChart'), {type:'line',
-    data:{labels, datasets:[mk('close','#38bdf8'), mk('sma_20','#f59e0b'), mk('sma_50','#a78bfa')]},
-    options:{responsive:true, interaction:{mode:'index',intersect:false}, scales:{x:{ticks:{maxTicksLimit:10,color:'#93a4c3'},grid:{color:'#1e293b'}}, y:{ticks:{color:'#93a4c3'},grid:{color:'#1e293b'}}}, plugins:{legend:{labels:{color:'#e8eef9'}}}}});
-}
-function drawCum(T){
-  const colors=['#38bdf8','#22c55e','#f59e0b','#ef4444','#a78bfa','#f472b6','#34d399','#fbbf24','#60a5fa','#e879f9'];
-  const labels = allSeries[T[0].ticker].map(p=>p.date);
-  cumChart = new Chart(document.getElementById('cumChart'), {type:'line',
-    data:{labels, datasets:T.map((t,i)=>({label:t.ticker, data:allSeries[t.ticker].map(p=>p.cumulative_return_pct), borderColor:colors[i%colors.length], borderWidth:1.4, pointRadius:0, tension:.15}))},
-    options:{responsive:true, interaction:{mode:'index',intersect:false}, scales:{x:{ticks:{maxTicksLimit:10,color:'#93a4c3'},grid:{color:'#1e293b'}}, y:{ticks:{color:'#93a4c3',callback:v=>v+'%'},grid:{color:'#1e293b'}}}, plugins:{legend:{labels:{color:'#e8eef9'}}}}});
-}
-</script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/src/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stock Market Data ETL &amp; Analysis — Niraj Thakur</title>
+    <script>
+      if (localStorage.theme === 'dark' || !('theme' in localStorage)) {
+        document.querySelector('html').classList.add('dark');
+        document.querySelector('html').style.colorScheme = 'dark';
+      } else {
+        document.querySelector('html').classList.remove('dark');
+        document.querySelector('html').style.colorScheme = 'light';
+      }        
+    </script>      
+  </head>
+  <body class="font-inter antialiased bg-gray-100 dark:bg-gray-900 text-gray-600 dark:text-gray-400">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <script>
+        if (localStorage.getItem('sidebar-expanded') == 'true') {
+            document.querySelector('body').classList.add('sidebar-expanded');
+        } else {
+            document.querySelector('body').classList.remove('sidebar-expanded');
+        }
+    </script>   
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
