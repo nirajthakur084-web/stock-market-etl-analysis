@@ -1,0 +1,122 @@
+{
+ "RELIANCE.NS": {
+  "raw_rows": 247,
+  "null_close_rows": 1,
+  "duplicate_dates": 0,
+  "ohlc_violations": 0,
+  "negative_volume_rows": 0,
+  "extreme_move_days_gt20pct": 0,
+  "clean_rows": 246,
+  "rows_dropped": 1,
+  "date_from": "2025-11-25",
+  "date_to": "2026-11-23"
+ },
+ "TCS.NS": {
+  "raw_rows": 247,
+  "null_close_rows": 1,
+  "duplicate_dates": 0,
+  "ohlc_violations": 0,
+  "negative_volume_rows": 0,
+  "extreme_move_days_gt20pct": 0,
+  "clean_rows": 246,
+  "rows_dropped": 1,
+  "date_from": "2025-11-25",
+  "date_to": "2026-11-23"
+ },
+ "HDFCBANK.NS": {
+  "raw_rows": 247,
+  "null_close_rows": 1,
+  "duplicate_dates": 0,
+  "ohlc_violations": 0,
+  "negative_volume_rows": 0,
+  "extreme_move_days_gt20pct": 0,
+  "clean_rows": 246,
+  "rows_dropped": 1,
+  "date_from": "2025-11-25",
+  "date_to": "2026-11-23"
+ },
+ "INFY.NS": {
+  "raw_rows": 247,
+  "null_close_rows": 1,
+  "duplicate_dates": 0,
+  "ohlc_violations": 0,
+  "negative_volume_rows": 0,
+  "extreme_move_days_gt20pct": 0,
+  "clean_rows": 246,
+  "rows_dropped": 1,
+  "date_from": "2025-11-25",
+  "date_to": "2026-11-23"
+ },
+ "SBIN.NS": {
+  "raw_rows": 247,
+  "null_close_rows": 1,
+  "duplicate_dates": 0,
+  "ohlc_violations": 0,
+  "negative_volume_rows": 0,
+  "extreme_move_days_gt20pct": 0,
+  "clean_rows": 246,
+  "rows_dropped": 1,
+  "date_from": "2025-11-25",
+  "date_to": "2026-11-23"
+ },
+ "ITC.NS": {
+  "raw_rows": 247,
+  "null_close_rows": 1,
+  "duplicate_dates": 0,
+  "ohlc_violations": 0,
+  "negative_volume_rows": 0,
+  "extreme_move_days_gt20pct": 0,
+  "clean_rows": 246,
+  "rows_dropped": 1,
+  "date_from": "2025-11-25",
+  "date_to": "2026-11-23"
+ },
+ "HINDUNILVR.NS": {
+  "raw_rows": 247,
+  "null_close_rows": 1,
+  "duplicate_dates": 0,
+  "ohlc_violations": 0,
+  "negative_volume_rows": 0,
+  "extreme_move_days_gt20pct": 0,
+  "clean_rows": 246,
+  "rows_dropped": 1,
+  "date_from": "2025-11-25",
+  "date_to": "2026-11-23"
+ },
+ "MARUTI.NS": {
+  "raw_rows": 247,
+  "null_close_rows": 1,
+  "duplicate_dates": 0,
+  "ohlc_violations": 0,
+  "negative_volume_rows": 0,
+  "extreme_move_days_gt20pct": 0,
+  "clean_rows": 246,
+  "rows_dropped": 1,
+  "date_from": "2025-11-25",
+  "date_to": "2026-11-23"
+ },
+ "^NSEI": {
+  "raw_rows": 247,
+  "null_close_rows": 2,
+  "duplicate_dates": 0,
+  "ohlc_violations": 0,
+  "negative_volume_rows": 0,
+  "extreme_move_days_gt20pct": 0,
+  "clean_rows": 245,
+  "rows_dropped": 2,
+  "date_from": "2025-11-25",
+  "date_to": "2026-11-23"
+ },
+ "^BSESN": {
+  "raw_rows": 247,
+  "null_close_rows": 2,
+  "duplicate_dates": 0,
+  "ohlc_violations": 0,
+  "negative_volume_rows": 0,
+  "extreme_move_days_gt20pct": 0,
+  "clean_rows": 245,
+  "rows_dropped": 2,
+  "date_from": "2025-11-25",
+  "date_to": "2026-11-23"
+ }
+}
