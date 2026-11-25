@@ -1,0 +1,237 @@
+{
+ "generated_at_utc": "2026-11-25T19:03:36+00:00",
+ "author": "Niraj Thakur",
+ "source": "Yahoo Finance chart API (daily OHLCV, 1 year)",
+ "tickers": [
+  {
+   "ticker": "RELIANCE.NS",
+   "name": "Reliance Industries",
+   "rows": 246,
+   "date_from": "2025-11-25",
+   "date_to": "2026-11-23",
+   "latest_close": 1351.0,
+   "latest_date": "2026-11-23",
+   "period_return_pct": -12.256,
+   "best_day": {
+    "date": "2026-11-02",
+    "return_pct": 11.598
+   },
+   "worst_day": {
+    "date": "2026-03-27",
+    "return_pct": -4.6
+   },
+   "avg_daily_volume": 14883948,
+   "rsi_14": 72.77,
+   "sma_50": 1246.05,
+   "volatility_20d": 2.779,
+   "signal": "Above SMA 50 (uptrend) \u00b7 RSI overbought"
+  },
+  {
+   "ticker": "TCS.NS",
+   "name": "Tata Consultancy Services",
+   "rows": 246,
+   "date_from": "2025-11-25",
+   "date_to": "2026-11-23",
+   "latest_close": 2460.0,
+   "latest_date": "2026-11-23",
+   "period_return_pct": -21.134,
+   "best_day": {
+    "date": "2026-10-13",
+    "return_pct": 6.791
+   },
+   "worst_day": {
+    "date": "2026-06-03",
+    "return_pct": -8.386
+   },
+   "avg_daily_volume": 4054374,
+   "rsi_14": 44.85,
+   "sma_50": 2304.15,
+   "volatility_20d": 1.462,
+   "signal": "Above SMA 50 (uptrend)"
+  },
+  {
+   "ticker": "HDFCBANK.NS",
+   "name": "HDFC Bank",
+   "rows": 246,
+   "date_from": "2025-11-25",
+   "date_to": "2026-11-23",
+   "latest_close": 817.8,
+   "latest_date": "2026-11-23",
+   "period_return_pct": -17.377,
+   "best_day": {
+    "date": "2026-04-08",
+    "return_pct": 5.712
+   },
+   "worst_day": {
+    "date": "2026-03-19",
+    "return_pct": -5.32
+   },
+   "avg_daily_volume": 34275268,
+   "rsi_14": 78.39,
+   "sma_50": 734.37,
+   "volatility_20d": 1.785,
+   "signal": "Above SMA 50 (uptrend) \u00b7 RSI overbought"
+  },
+  {
+   "ticker": "INFY.NS",
+   "name": "Infosys",
+   "rows": 246,
+   "date_from": "2025-11-25",
+   "date_to": "2026-11-23",
+   "latest_close": 1103.4,
+   "latest_date": "2026-11-23",
+   "period_return_pct": -27.911,
+   "best_day": {
+    "date": "2026-06-02",
+    "return_pct": 5.68
+   },
+   "worst_day": {
+    "date": "2026-02-04",
+    "return_pct": -7.258
+   },
+   "avg_daily_volume": 12179906,
+   "rsi_14": 35.31,
+   "sma_50": 1088.99,
+   "volatility_20d": 1.834,
+   "signal": "Above SMA 50 (uptrend)"
+  },
+  {
+   "ticker": "SBIN.NS",
+   "name": "State Bank of India",
+   "rows": 246,
+   "date_from": "2025-11-25",
+   "date_to": "2026-11-23",
+   "latest_close": 1132.65,
+   "latest_date": "2026-11-23",
+   "period_return_pct": 15.154,
+   "best_day": {
+    "date": "2026-02-09",
+    "return_pct": 7.464
+   },
+   "worst_day": {
+    "date": "2026-05-08",
+    "return_pct": -6.658
+   },
+   "avg_daily_volume": 12985488,
+   "rsi_14": 78.33,
+   "sma_50": 999.1,
+   "volatility_20d": 1.608,
+   "signal": "Above SMA 50 (uptrend) \u00b7 RSI overbought"
+  },
+  {
+   "ticker": "ITC.NS",
+   "name": "ITC Limited",
+   "rows": 246,
+   "date_from": "2025-11-25",
+   "date_to": "2026-11-23",
+   "latest_close": 301.0,
+   "latest_date": "2026-11-23",
+   "period_return_pct": -24.9,
+   "best_day": {
+    "date": "2026-10-05",
+    "return_pct": 5.08
+   },
+   "worst_day": {
+    "date": "2026-01-01",
+    "return_pct": -9.715
+   },
+   "avg_daily_volume": 19768003,
+   "rsi_14": 81.51,
+   "sma_50": 270.02,
+   "volatility_20d": 1.33,
+   "signal": "Above SMA 50 (uptrend) \u00b7 RSI overbought"
+  },
+  {
+   "ticker": "HINDUNILVR.NS",
+   "name": "Hindustan Unilever",
+   "rows": 246,
+   "date_from": "2025-11-25",
+   "date_to": "2026-11-23",
+   "latest_close": 2019.1,
+   "latest_date": "2026-11-23",
+   "period_return_pct": -16.362,
+   "best_day": {
+    "date": "2026-04-17",
+    "return_pct": 4.754
+   },
+   "worst_day": {
+    "date": "2026-07-28",
+    "return_pct": -6.985
+   },
+   "avg_daily_volume": 1725059,
+   "rsi_14": 65.99,
+   "sma_50": 1918.45,
+   "volatility_20d": 1.566,
+   "signal": "Above SMA 50 (uptrend)"
+  },
+  {
+   "ticker": "MARUTI.NS",
+   "name": "Maruti Suzuki India",
+   "rows": 246,
+   "date_from": "2025-11-25",
+   "date_to": "2026-11-23",
+   "latest_close": 14010.0,
+   "latest_date": "2026-11-23",
+   "period_return_pct": -11.826,
+   "best_day": {
+    "date": "2026-11-19",
+    "return_pct": 7.576
+   },
+   "worst_day": {
+    "date": "2026-10-01",
+    "return_pct": -4.855
+   },
+   "avg_daily_volume": 466023,
+   "rsi_14": 82.76,
+   "sma_50": 12055.06,
+   "volatility_20d": 2.328,
+   "signal": "Above SMA 50 (uptrend) \u00b7 RSI overbought"
+  },
+  {
+   "ticker": "^NSEI",
+   "name": "NIFTY 50 (Index)",
+   "rows": 245,
+   "date_from": "2025-11-25",
+   "date_to": "2026-11-23",
+   "latest_close": 25349.65,
+   "latest_date": "2026-11-23",
+   "period_return_pct": -2.067,
+   "best_day": {
+    "date": "2026-04-08",
+    "return_pct": 3.778
+   },
+   "worst_day": {
+    "date": "2026-03-19",
+    "return_pct": -3.262
+   },
+   "avg_daily_volume": 377286,
+   "rsi_14": 77.75,
+   "sma_50": 23520.1,
+   "volatility_20d": 0.981,
+   "signal": "Above SMA 50 (uptrend) \u00b7 RSI overbought"
+  },
+  {
+   "ticker": "^BSESN",
+   "name": "SENSEX (Index)",
+   "rows": 245,
+   "date_from": "2025-11-25",
+   "date_to": "2026-11-23",
+   "latest_close": 82435.99,
+   "latest_date": "2026-11-23",
+   "period_return_pct": -2.543,
+   "best_day": {
+    "date": "2026-04-08",
+    "return_pct": 3.949
+   },
+   "worst_day": {
+    "date": "2026-03-19",
+    "return_pct": -3.255
+   },
+   "avg_daily_volume": 20248,
+   "rsi_14": 79.71,
+   "sma_50": 75750.1,
+   "volatility_20d": 1.024,
+   "signal": "Above SMA 50 (uptrend) \u00b7 RSI overbought"
+  }
+ ]
+}
