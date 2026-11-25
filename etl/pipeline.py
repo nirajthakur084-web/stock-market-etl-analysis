@@ -171,12 +171,16 @@ def load(frames: dict, summaries: list, qualities: dict, run_at: str):
         out["date"] = out["date"].dt.strftime("%Y-%m-%d")
         out.to_sql("daily_prices", con, if_exists="append", index=False)
         all_rows.append(out)
-        series = out[["date", "open", "high", "low", "close", "volume",
-                      "daily_return_pct", "sma_20", "sma_50", "ema_20",
-                      "rsi_14", "cumulative_return_pct"]].where(pd.notna(out), None)
+        cols = ["date", "open", "high", "low", "close", "volume",
+                "daily_return_pct", "sma_20", "sma_50", "ema_20",
+                "rsi_14", "cumulative_return_pct"]
+        sub = out[cols]
+        series = sub.astype(object).where(pd.notna(sub), None)
         safe = symbol.replace("^", "IDX_")
+        # allow_nan=False: a stray NaN must fail loudly here, never ship invalid JSON
         (SERIES_DIR / f"{safe}.json").write_text(
-            json.dumps({"ticker": symbol, "points": series.to_dict(orient="records")}, indent=1))
+            json.dumps({"ticker": symbol, "points": series.to_dict(orient="records")},
+                       indent=1, allow_nan=False))
     flat = [{**s,
              "best_day": json.dumps(s["best_day"]),
              "worst_day": json.dumps(s["worst_day"])} for s in summaries]
@@ -189,8 +193,17 @@ def load(frames: dict, summaries: list, qualities: dict, run_at: str):
     (DATA_DIR / "summary.json").write_text(json.dumps(
         {"generated_at_utc": run_at, "author": "Niraj Thakur",
          "source": "Yahoo Finance chart API (daily OHLCV, 1 year)",
-         "tickers": summaries}, indent=1))
-    (DATA_DIR / "quality.json").write_text(json.dumps(qualities, indent=1))
+         "tickers": summaries}, indent=1, allow_nan=False))
+    (DATA_DIR / "quality.json").write_text(json.dumps(qualities, indent=1, allow_nan=False))
+
+    # Mirror the web JSONs into public/data so the Vite dashboard serves fresh data
+    web_dir = ROOT / "public" / "data"
+    if (ROOT / "public").exists():
+        import shutil
+        if web_dir.exists():
+            shutil.rmtree(web_dir)
+        shutil.copytree(DATA_DIR, web_dir, ignore=shutil.ignore_patterns("stocks.db"))
+        print(f"Web data mirrored -> {web_dir}")
 
 
 # ---------------------------------------------------------------- main
